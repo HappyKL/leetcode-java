@@ -76,9 +76,9 @@ public class MedianOfTwoSortedArrays {
                 } else {
                     return (nums2[(m + n) / 2 - m - 1] + nums2[(m + n) / 2 - m]) / 2.0;
                 }
-            } else if (nums1[0] >= nums2[n - 1]) {
+            } else if (nums1[0] >= nums2[(m + n + 1) / 2]) {
                 if (m == n) {
-                    return (nums1[0] + nums2[n - 1]) / 2.0;
+                    return (nums1[0] + nums2[(m + n + 1) / 2]) / 2.0;
                 } else {
                     return (nums2[(m + n) / 2 - 1] + nums2[(m + n) / 2]) / 2.0;
                 }
@@ -118,24 +118,32 @@ public class MedianOfTwoSortedArrays {
         }
 
         //System.out.println(m + " " + n);
-        int left = 1;
+        int left = 0;
         int right = m;
         while (left <= right) {
             int i = (left + right) / 2;
             int j = (m + n + 1) / 2 - i;
-            System.out.println( i + "-" + j);
+            System.out.println(i + "-" + j);
             if ((j == 0 || i == m || nums1[i] >= nums2[j - 1])
                 && (i == 0 || j == n || nums1[i - 1] <= nums2[j])) {
                 if ((m + n) % 2 == 0) {
                     int L;
                     int R;
-                    if( i == 0 ) L = nums2[j-1];
-                    else if( j == 0 ) L = nums1[i-1];
-                    else L=Math.max(nums1[i - 1], nums2[j - 1]);
+                    if (i == 0) {
+                        L = nums2[j - 1];
+                    } else if (j == 0) {
+                        L = nums1[i - 1];
+                    } else {
+                        L = Math.max(nums1[i - 1], nums2[j - 1]);
+                    }
 
-                    if( i == m ) R = nums2[j];
-                    else if( j == n ) R = nums1[i];
-                    else R = Math.min(nums1[i], nums2[j]);
+                    if (i == m) {
+                        R = nums2[j];
+                    } else if (j == n) {
+                        R = nums1[i];
+                    } else {
+                        R = Math.min(nums1[i], nums2[j]);
+                    }
                     return (L + R) / 2.0;
                 } else {
                     return Math.max(nums1[i - 1], nums2[j - 1]);

@@ -10,8 +10,8 @@ package com.ict.kang.array;
 public class ArrayTest {
 
     public static void main(String[] args) {
-        int[] a = {4, 5};
-        int[] b = {1,2,3,6};
+        int[] a = { 5,6};
+        int[] b = {1,2,3,4,7};
         MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
         System.out.println(medianOfTwoSortedArrays.findMedianSortedArrays(a, b));
     }
