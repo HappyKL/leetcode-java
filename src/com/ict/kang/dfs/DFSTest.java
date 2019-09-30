@@ -9,4 +9,10 @@ package com.ict.kang.dfs;
  */
 public class DFSTest {
 
+    public static void main(String[] args) {
+        while(true){
+            System.out.println("sfs");
+        }
+    }
+
 }
