@@ -10,11 +10,11 @@ package com.ict.kang.array;
 public class ArrayTest {
 
     public static void main(String[] args) {
-//        int[] a = {1,3};
-//        int[] b = {2};
-//        MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
-//        System.out.println(medianOfTwoSortedArrays.findMedianSortedArrays(a, b));
-        method(1);
+        int[] a = {-5,-4,-3,-2,-1,0,0,1,2,3,4,5};
+        int b = 0;
+        FourSum fourSum = new FourSum();
+        System.out.println(fourSum.fourSum(a,b));
+        //method(1);
     }
 
     static int count = 0;
